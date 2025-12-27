@@ -16,10 +16,6 @@ def get_clean_data():
     data=pd.read_csv("model/diabetes.csv")
     return data
 
-def load_css(file_path):
-    with open(file_path) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
 def add_sidebar():
     st.sidebar.header("Details")
     data = get_clean_data()
@@ -160,8 +156,7 @@ def main():
 
     st.info("This is a Diabetes Prediction Web Application built using Streamlit and Python")
 
-    css_path=pathlib.Path("style.css")
-    load_css(css_path)
+    
 
     if "show_content" not in st.session_state:
         st.session_state.show_content = False
